@@ -5,7 +5,6 @@ import java.util.*;
 
 /**
  * Class for operations with arrays implements Vector
- * 
  * @author Krygin A.N.
  * @version 1.0
  */
@@ -29,8 +28,8 @@ public class ArrayVector implements Vector, Cloneable, Serializable{
 
 	/**
 	 * Method for setting element of the the vector
-	 * @param i - length of the vector
-	 * @param k - element of the vector
+	 * @param index - length of the vector
+	 * @param element - element of the vector
 	 * @return void
 	 */
 	public double setElementOfVector(int index, double element) {
@@ -55,7 +54,6 @@ public class ArrayVector implements Vector, Cloneable, Serializable{
 
 	/**
 	 * Method for setting full vector from another vector
-	 * @param <E>
 	 * @param arrs - input vector
 	 * @return void
 	 */
