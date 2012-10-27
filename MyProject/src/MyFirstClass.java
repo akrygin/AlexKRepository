@@ -12,7 +12,7 @@ public class MyFirstClass {
 				System.out.print(o.multFS());
 				System.out.print(" ");
 			}
-			System.out.println();
+			System.out.println(NetCracker DNIWE EBANOE!!!!);
 		}
 	}
 }
