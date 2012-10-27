@@ -1,20 +1,24 @@
 package paternsVectorLab7;
 
-import java.io.Serializable;
-import java.util.Arrays;
+import java.io.*;
+import java.util.*;
 
 /**
  * Class for operations with arrays implements Vector
  * @author Krygin A.N.
  * @version 1.0
  */
-public class ArrayVector implements Vector, Cloneable, Serializable{
+public class ArrayVector implements Vector, Cloneable, Serializable, VectorFactory{
 	private static final long serialVersionUID = -5576732613146316062L;
 	private double[] array;
 
 	public ArrayVector(int v) {
 		this.array = new double[v];
 	}
+
+    public ArrayVector(){
+
+    }
 
 	/**
 	 * Method for getting single element of the vector
@@ -124,4 +128,8 @@ public class ArrayVector implements Vector, Cloneable, Serializable{
 		clonedArr.array = (double[]) array.clone();
 		return clonedArr;
 	}
+
+    public Vector setVectorFactory(int size) {
+        return new ArrayVector(size);
+    }
 }

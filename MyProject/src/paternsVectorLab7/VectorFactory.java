@@ -7,5 +7,5 @@ package paternsVectorLab7;
  * Time: 18:25
  */
 public interface VectorFactory {
-    public double Vector(int lengthValue);
+    public Vector setVectorFactory(int size);
 }
