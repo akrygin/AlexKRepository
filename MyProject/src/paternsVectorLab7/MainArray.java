@@ -6,5 +6,6 @@ public class MainArray {
         c.setVectorFromArray(Vectors.randomVector(6));
         System.out.println(c);
         System.out.println("For bitbucket test");
+        System.out.println("For bitbucket test");
     }
 }
