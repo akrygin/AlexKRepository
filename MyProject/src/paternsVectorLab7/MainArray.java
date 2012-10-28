@@ -7,5 +7,6 @@ public class MainArray {
         System.out.println(c);
         System.out.println("For bitbucket test");
         System.out.println("For bitbucket test");
+        System.out.println("For bitbucket test");
     }
 }
