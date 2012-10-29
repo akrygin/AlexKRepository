@@ -1,4 +1,4 @@
-package paternsVectorLab7;
+package paternsVectorLab6;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,5 +7,5 @@ package paternsVectorLab7;
  * Time: 18:25
  */
 public interface VectorFactory {
-    public Vector setVectorFactory(int size);
+    public Vector createVector(int size);
 }

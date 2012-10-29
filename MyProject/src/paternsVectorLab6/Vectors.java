@@ -1,4 +1,4 @@
-package paternsVectorLab7;
+package paternsVectorLab6;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -10,14 +10,14 @@ import java.util.Random;
  * @version 1.0
  */
 public class Vectors {
-    public static VectorFactory vectorFactory = new ArrayVector();
+    public static VectorFactory vectorFactory = new ArrayCreator();
 
     public static void setVectorFactory(VectorFactory vectorFactory) {
         Vectors.vectorFactory = vectorFactory;
     }
 
     public static Vector createInstance(int size) {
-        Vector vec = new ArrayVector().setVectorFactory(size);
+        Vector vec = vectorFactory.createVector(size);
         return vec;
     }
 

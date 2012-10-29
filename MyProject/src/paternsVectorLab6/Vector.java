@@ -1,4 +1,4 @@
-package paternsVectorLab7;
+package paternsVectorLab6;
 
 /**
  * Interface for working with data arrays, double vectors and linked lists

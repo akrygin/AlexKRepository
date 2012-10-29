@@ -1,4 +1,4 @@
-package paternsVectorLab7;
+package paternsVectorLab6;
 
 import java.io.*;
 import java.util.*;
@@ -129,7 +129,7 @@ public class ArrayVector implements Vector, Cloneable, Serializable, VectorFacto
 		return clonedArr;
 	}
 
-    public Vector setVectorFactory(int size) {
+    public Vector createVector(int size) {
         return new ArrayVector(size);
     }
 }

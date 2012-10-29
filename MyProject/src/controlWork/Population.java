@@ -1,4 +1,4 @@
-package practiceLab6;
+package controlWork;
 
 import java.io.*;
 import java.util.*;
