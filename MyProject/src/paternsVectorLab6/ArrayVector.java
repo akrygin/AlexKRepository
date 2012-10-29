@@ -8,7 +8,7 @@ import java.util.*;
  * @author Krygin A.N.
  * @version 1.0
  */
-public class ArrayVector implements Vector, Cloneable, Serializable, VectorFactory{
+public class ArrayVector implements Vector, Cloneable, Serializable{
 	private static final long serialVersionUID = -5576732613146316062L;
 	private double[] array;
 
@@ -128,8 +128,4 @@ public class ArrayVector implements Vector, Cloneable, Serializable, VectorFacto
 		clonedArr.array = (double[]) array.clone();
 		return clonedArr;
 	}
-
-    public Vector createVector(int size) {
-        return new ArrayVector(size);
-    }
 }
