@@ -1,4 +1,4 @@
-package paternsVectorLab6;
+package adapterVectorLab7;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -10,20 +10,18 @@ import java.util.Random;
  * @version 1.0
  */
 public class Vectors {
-    public static VectorFactory vectorFactory = null;
-
-    public static void setVectorFactory(VectorFactory vectorFactory) {
-        Vectors.vectorFactory = vectorFactory;
+    //------------------------------Pattern Adapter---------------------------------------------------------------------
+    public static VectorAdapter getAdaptedJVector(java.util.Vector jVector){
+        JVectorAdapter jVecAdapt = new JVectorAdapter();
+        return jVecAdapt.vectorConvertation(jVector);
     }
-
-    public static Vector createInstance(int size) {
-        Vector vec = vectorFactory.createVector(size);
-        return vec;
+    public static VectorAdapter getProtectedVector(VectorAdapter vector){
+        return new ProtectedVector(vector);
     }
 
     //------------------------------------------------------------------------------------------------------------------
 	/* WRITE */
-	public static void writeVector(Vector arrs, Writer out) {
+	public static void writeVector(VectorAdapter arrs, Writer out) {
 		try {
 			PrintWriter write = new PrintWriter(out);
 			for (int i = 0; i < arrs.countVectorLength(); i++) {
@@ -56,7 +54,7 @@ public class Vectors {
 	}
     //------------------------------------------------------------------------------------------------------------------
 	/* OUTPUT (write) */
-	public static void outputVector(Vector arrs, OutputStream out) {
+	public static void outputVector(VectorAdapter arrs, OutputStream out) {
 		try {
 			DataOutputStream write = new DataOutputStream(out);
 			write.writeInt(arrs.countVectorLength());
@@ -90,7 +88,7 @@ public class Vectors {
 	 * @param m - factor for multiplication
 	 * @return void
 	 */
-	public static void arrMult(double m, Vector arrs) {
+	public static void arrMult(double m, VectorAdapter arrs) {
 		for (int i = 0; i < arrs.countVectorLength(); i++) {
 			arrs.setElementOfVector(i, arrs.getElementOfVector(i)*m);
 		}
@@ -102,7 +100,7 @@ public class Vectors {
 	 * @param arr2 - second foldable vector
 	 * @return void
 	 */
-	public static void arrAddition(Vector arr1, Vector arr2) {
+	public static void arrAddition(VectorAdapter arr1, VectorAdapter arr2) {
 		for (int i = 0; i < arr1.countVectorLength(); i++) {
 			double summ = arr1.getElementOfVector(i) + arr2.getElementOfVector(i);
 			System.out.println("Adition elements : " + summ);
@@ -115,7 +113,7 @@ public class Vectors {
 	 * @param arr2 - second multiplication vector
 	 * @return void
 	 */
-	public static void arrScalMult(Vector arr1, Vector arr2) {
+	public static void arrScalMult(VectorAdapter arr1, VectorAdapter arr2) {
 		double scalmult = 0;
 		for (int i = 0; i < arr1.countVectorLength(); i++)
 			scalmult += arr1.getElementOfVector(i) * arr2.getElementOfVector(i);
@@ -129,7 +127,7 @@ public class Vectors {
 	 * @param arr2 - second comparison vector
 	 * @return void
 	 */
-	public static void arrEquels(Vector arr1, Vector arr2) {
+	public static void arrEquels(VectorAdapter arr1, VectorAdapter arr2) {
 		if (arr1.countVectorLength() != arr2.countVectorLength()) {
 			System.out.println("Vectors aren't same in lenght");
 		}
